@@ -12,6 +12,7 @@
 
 ![ffrosgraph](https://github.com/user-attachments/assets/0bd58981-6d4a-49be-a4a6-67632b04fdaa)
 
+``  
 robot_vacuum_description/  
 ├── config/  
 │   ├── costmap_common_params.yaml  
@@ -27,13 +28,14 @@ robot_vacuum_description/
 │   └── maproom.yaml  
 │   └── maproom.pgm  
 ├── meshs/  
-│   └── room.stl                # 房間模型   
+│   └── room.stl               # 房間模型   
 ├── urdf/   
 │   └── robot_vacuum.gazebo  
 │   └── robot_vacuum.xacro       
 │   └── room.xacro    
 ├──move_base_params.yaml  
-├──nav_cleaning.py              # 發送點位
+├──nav_cleaning.py             # 發送點位
+``  
 
 ## **使用說明**
 
