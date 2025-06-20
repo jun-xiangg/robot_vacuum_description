@@ -10,6 +10,8 @@
 * 地圖建構（SLAM）：使用 TurtleBot3 的 slam_toolbox 對模擬環境進行掃描，生成 .yaml 與 .pgm 地圖檔。
 * 自主導航：結合 AMCL 與 move_base 進行定位與路徑規劃，並支援 RViz 目標點導航功能。
 
+![ffrosgraph](https://github.com/user-attachments/assets/0bd58981-6d4a-49be-a4a6-67632b04fdaa)
+
 robot_vacuum_description/  
 ├── config/  
 │   ├── costmap_common_params.yaml  
@@ -34,6 +36,7 @@ robot_vacuum_description/
 ├──nav_cleaning.py              # 發送點位
 
 ## **使用說明**
+
 1. 建置ROS套件  
 ``cd ~/catkin_ws``  
 ``catkin_make``  
