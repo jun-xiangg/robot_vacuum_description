@@ -1,0 +1,23 @@
+<launch>
+  <!-- 啟動 Gazebo 空場景 -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+  </include>
+
+  <!-- 載入房間 URDF 模型 -->
+  <param name="room_description" command="cat $(find robot_vacuum_description)/urdf/room.xacro" />
+
+  <!-- 使用 gazebo_ros 來加載房間模型 -->
+  <node name="spawn_room" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-param room_description -urdf -model room -x 0 -y 0 -z 0 "/>
+
+  <!-- 載入機器人 xacro 檔案，並轉換為 URDF -->
+  <param name="robot_description" command="xacro $(find robot_vacuum_description)/urdf/robot_vacuum.xacro" />
+
+  <!-- 在 Gazebo 中生成機器人模型 -->
+  <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-param robot_description -urdf -model robot -x 0.25 -y 0 -z 0"/>
+</launch>

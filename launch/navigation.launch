@@ -1,0 +1,31 @@
+<launch>
+  <!-- 載入機器人模型 -->
+  <include file="$(find robot_vacuum_description)/launch/robot.launch"/>
+
+  <!-- 地圖檔 -->
+  <arg name="map_file" default="$(find robot_vacuum_description)/maps/maproom.yaml"/>
+
+  <!-- 啟動地圖伺服器 -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL 定位 -->
+  <node name="amcl" pkg="amcl" type="amcl" output="screen">
+    <param name="odom_frame_id" value="odom"/>
+    <param name="base_frame_id" value="base_link"/>
+    <remap from="scan" to="/scan"/>
+  </node>
+
+    <!-- move_base 導航主節點 -->
+  <node name="move_base" pkg="move_base" type="move_base" output="screen">
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+
+    <rosparam file="$(find robot_vacuum_description)/config/costmap_common_params.yaml" command="load"/>
+    <rosparam file="$(find robot_vacuum_description)/config/global_costmap_params.yaml" command="load"/>
+    <rosparam file="$(find robot_vacuum_description)/config/local_costmap_params.yaml" command="load"/>
+    <rosparam file="$(find robot_vacuum_description)/config/base_local_planner_params.yaml" command="load"/>
+  </node>
+
+
+  <!-- RViz 啟動 -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
+</launch>

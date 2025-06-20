@@ -1,0 +1,15 @@
+<launch>
+  <!-- 載入機器人模型 -->
+  <include file="$(find robot_vacuum_description)/launch/robot.launch"/>
+
+  <!-- 啟動 gmapping -->
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" output="screen">
+    <param name="base_frame" value="base_link"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="map_update_interval" value="2.0"/>
+    <remap from="scan" to="/scan"/>
+  </node>
+
+  <!-- 啟動 RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_slam)/rviz/turtlebot3_gmapping.rviz"/>
+</launch>
