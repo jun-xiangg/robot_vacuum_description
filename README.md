@@ -47,11 +47,11 @@ robot_vacuum_description/
 ```
 roslaunch robot_vacuum_description world.launch
 ```  
-開啟終端機(2) 開導航(RViz)  
+　 開啟終端機(2) 開導航(RViz)  
 ```
 roslaunch robot_vacuum_description navigation.launch
 ```  
-開啟終端機(3) 發送目標點位    
+　 開啟終端機(3) 發送目標點位    
 ```
 rosrun robot_vacuum_description nav_cleaning.py
 ```  
