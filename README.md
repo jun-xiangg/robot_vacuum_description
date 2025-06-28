@@ -44,17 +44,17 @@ robot_vacuum_description/
 ``catkin_make``  
 
 2. 開啟終端機(1) 開地圖  
-　 ```
-　 roslaunch robot_vacuum_description world.launch
-　 ```  
-　 開啟終端機(2) 開導航(RViz)  
-　 ```
-　 roslaunch robot_vacuum_description navigation.launch
-　 ```  
-　 開啟終端機(3) 發送目標點位    
-　 ```
-　 rosrun robot_vacuum_description nav_cleaning.py
-　 ```  
+```
+roslaunch robot_vacuum_description world.launch
+```  
+開啟終端機(2) 開導航(RViz)  
+```
+roslaunch robot_vacuum_description navigation.launch
+```  
+開啟終端機(3) 發送目標點位    
+```
+rosrun robot_vacuum_description nav_cleaning.py
+```  
 
 ***
 環境使用VirtualBox虛擬機軟體安裝Ubuntu Linux 20.04 (ROS1 Noetic)  
