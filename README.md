@@ -43,8 +43,7 @@ robot_vacuum_description/
 ``cd ~/catkin_ws``  
 ``catkin_make``  
 
-2.
-開啟終端機(1) 開地圖  
+2.開啟終端機(1) 開地圖  
 ```
 roslaunch robot_vacuum_description world.launch
 ```  
