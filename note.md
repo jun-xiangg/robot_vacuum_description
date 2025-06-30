@@ -14,3 +14,8 @@ rpy 是以 roll-pitch-yaw 表示角度的，單位為 弧度（radians）。1.57
 
 
 ***
+[ ] 雲端硬碟
+- https://drive.google.com/drive/folders/1_uTe9kyZZOqP2k6o0xI178JlphvztaB6
+
+[ ] YouTube課程
+- https://www.youtube.com/playlist?list=PLiMSRllbSoU3dBT9QWCyfeg8axdPatVRD
